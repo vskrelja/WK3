@@ -7,10 +7,10 @@ output: html_document
 
 ```{R}
 # Read data file
-agaricus_lepiota <- read.table("C:\\Users\\Randi Skrelja\\Documents\\EDUCATION\\CUNY\\Refreshers\\R\\Week 3\\data\\agaricus-lepiota.data", header=FALSE, sep=",")
+agaricus_lepiota <- read.table("https://raw.githubusercontent.com/vskrelja/WK3/master/agaricus-lepiota.data", header=FALSE, sep=",")
 
 # Read Data Dictionary
-Data_Dict <- read.csv("C:\\Users\\Randi Skrelja\\Documents\\EDUCATION\\CUNY\\Refreshers\\R\\Week 3\\data\\Mushrooms_Data_Dictionary.csv")
+Data_Dict <- read.csv("https://raw.githubusercontent.com/vskrelja/WK3/master/Mushrooms_Data_Dictionary.csv")
 
 # Create a list of column of headings (23) 
 column_list <- c("class", as.character(Data_Dict$Attribute))
