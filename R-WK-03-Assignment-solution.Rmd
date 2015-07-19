@@ -1,0 +1,38 @@
+---
+title: "Mushrooms"
+author: "vskrelja"
+date: "July 19, 2015"
+output: html_document
+---
+
+```{R}
+# Read data file
+agaricus_lepiota <- read.table("C:\\Users\\Randi Skrelja\\Documents\\EDUCATION\\CUNY\\Refreshers\\R\\Week 3\\data\\agaricus-lepiota.data", header=FALSE, sep=",")
+
+# Read Data Dictionary
+Data_Dict <- read.csv("C:\\Users\\Randi Skrelja\\Documents\\EDUCATION\\CUNY\\Refreshers\\R\\Week 3\\data\\Mushrooms_Data_Dictionary.csv")
+
+# Create a list of column of headings (23) 
+column_list <- c("class", as.character(Data_Dict$Attribute))
+
+# Assign column names
+names(agaricus_lepiota) <- column_list
+
+# Assign names to abbreviations in columns: class, cap_shape, bruises, gill_size
+agaricus_lepiota$class <- gsub("e", "edible", agaricus_lepiota$class)
+agaricus_lepiota$class <- gsub("p", "poisonous", agaricus_lepiota$class)
+agaricus_lepiota$cap_shape <- gsub("b", "bell", agaricus_lepiota$cap_shape)
+agaricus_lepiota$cap_shape <- gsub("c", "conical", agaricus_lepiota$cap_shape)
+agaricus_lepiota$cap_shape <- gsub("x", "convex", agaricus_lepiota$cap_shape)
+agaricus_lepiota$cap_shape <- gsub("f", "flat", agaricus_lepiota$cap_shape)
+agaricus_lepiota$cap_shape <- gsub("k", "knobbed", agaricus_lepiota$cap_shape)
+agaricus_lepiota$cap_shape <- gsub("s", "sunken", agaricus_lepiota$cap_shape)
+agaricus_lepiota$bruises <- gsub("t", "bruises", agaricus_lepiota$bruises)
+agaricus_lepiota$bruises <- gsub("f", "no", agaricus_lepiota$bruises)
+agaricus_lepiota$gill_size <- gsub("b", "broad", agaricus_lepiota$gill_size)
+agaricus_lepiota$gill_size <- gsub("n", "narrow", agaricus_lepiota$gill_size)
+
+head(agaricus_lepiota)
+
+```
+
